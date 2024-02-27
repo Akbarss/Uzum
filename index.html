@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uzum Market - Интернет-магазин</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <style>
+    body {
+      background: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    #headere {
+      max-width: 100%;
+    }
+
+    swiper-container {
+      background-color: #eee;
+      width: 1250px;
+      height: 400px;
+      border: none;
+      margin-top: 30px;
+      border-radius: 20px;
+    }
+
+    swiper-slide {
+      border: none;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+
+    swiper-slide img {
+      background-position: center;
+      display: block;
+      width: 1250px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .autoplay-progress {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--swiper-theme-color);
+    }
+
+    #search-input {
+      width: 440px;
+    }
+
+    .autoplay-progress svg {
+      --progress: 0;
+      position: absolute;
+      left: 0;
+      top: 0px;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      stroke-width: 4px;
+      stroke: var(--swiper-theme-color);
+      fill: none;
+      stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="h-9 bg-slate-100 w-full ">
+    <div class="flex max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+      <a class="ml-10 mt-2 flex bg-primary-800" href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          viewBox="0 0 21 21">
+          <g fill="none" fill-rule="evenodd" stroke="black" stroke-linecap="round" stroke-linejoin="round"
+            transform="translate(4 2)">
+            <path
+              d="m6.5 16.54l.631-.711c.716-.82 1.36-1.598 1.933-2.338l.473-.624c1.975-2.661 2.963-4.773 2.963-6.334C12.5 3.201 9.814.5 6.5.5s-6 2.701-6 6.033c0 1.561.988 3.673 2.963 6.334l.473.624a54.84 54.84 0 0 0 2.564 3.05" />
+            <circle cx="6.5" cy="6.5" r="2.5" />
+          </g>
+        </svg>
+        Shahar: Samarqand</a>
+      <a class="ml-5 mt-2 flex" href="https://uzum.uz/uz/about/delivery-points">Topshirish punktlari</a>
+      <h1 class="ml-32 mt-2 text-slate-400">Buyurtmangizni 1 kunda bepul yetkazib beramiz!</h1>
+      <a class="ml-48 mt-2 text-slate-600" href="https://uzum.uz/uz/faq">Savol-Javoblar</a>
+      <a class="ml-5  mt-2 text-slate-600" href="">Buyurtmalarim</a>
+      <a class="ml-5 mt-2" href="">O'zbekcha</a>
+    </div>
+  </div>
+  <header class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+    <div id="cen-header"
+      class="w-full h-16 bg-white flex max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+      <div id="logo">
+        <img class="h-12 pt-2 pl-6 "
+          src="https://static.tildacdn.one/tild3664-3139-4231-b664-663965386239/uzum-footer.png" alt="">
+      </div>
+      <button class="w-32 h-10 ml-32 mt-3 bg-violet-100	rounded text-violet-600">
+        <span class="icon-[ant-design--shopping-outlined]"></span> Katalog
+      </button>
+      <div id="search" class="mt-3 ml-5">
+        <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+          <input id="search-input" type="search"
+            class="relative m-0 -mr-0.5 block min-w-0 flex-auto rounded-l,  bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary border border-solid border-neutral-300 focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+            placeholder="Search" aria-label="Search" aria-describedby="button-addon1" />
+
+          <!--Search button-->
+          <button
+            class=" flex items-center rounded-r bg-zinc-200	border border-solid border-neutral-300	px-6 py-2.5 text-xs font-medium uppercase leading-tight transition duration-150 ease-in-out hover:bg-primary-700 focus:bg-primary-700 focus:outline-none focus:ring-0 active:bg-primary-800"
+            type="button" id="button-addon1" data-te-ripple-init data-te-ripple-color="light">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+              <path fill-rule="evenodd"
+                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="buttons" class="ml-3 flex max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+        <button class="mt-6 ml-5  rounded text-black flex"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewBox="0 0 24 24">
+            <path fill="black"
+              d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4s4-1.79 4-4s-1.79-4-4-4m0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4" />
+          </svg>Kirish</button>
+        <button class="mt-6 ml-5  rounded text-black flex"><svg class="ml-3" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 48 48">
+            <path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+              d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8" />
+          </svg>Saralangan</button>
+        <button class="mt-6 ml-5  rounded text-black flex"><svg class="ml-3" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 1024 1024">
+            <path fill="black"
+              d="M832 312H696v-16c0-101.6-82.4-184-184-184s-184 82.4-184 184v16H192c-17.7 0-32 14.3-32 32v536c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V344c0-17.7-14.3-32-32-32m-432-16c0-61.9 50.1-112 112-112s112 50.1 112 112v16H400zm392 544H232V384h96v88c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-88h224v88c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-88h96z" />
+          </svg>Savat</button>
+      </div>
+    </div>
+    <div class="mt-3">
+      <ul id="links" class="flex">
+        <img class="w-5 h-5 ml-6" src="https://static.uzum.uz/nasiya/union.png" alt="">
+        <a class="ml-1" href="">Muddatli to`lov</a>
+        <img class="w-5 h-5 ml-6" src="https://static.uzum.uz/fast_categories/new_sale_2023.png" alt="">
+        <a class="ml-1" href="">Sirli to`plam</a>
+        <img class="w-5 h-5 ml-6" src="https://static.uzum.uz/fast_categories/winter_clothes.png" alt="">
+        <a class="ml-1" href="">Qishgi sotuv</a>
+        <img class="w-5 h-5 ml-6" src="https://static.uzum.uz/fast_categories/mens_gifts.png" alt="">
+        <a class="ml-1" href="">Erkaklar uchun</a>
+        <a class="ml-6 text-slate-400" href=""> Kiyimlar</a>
+        <a class="ml-6 text-slate-400" href="">Poyabzal</a>
+        <a class="ml-6 text-slate-400" href="">Aksessuarlar</a>
+        <a class="ml-6 text-slate-400" href="">Go`zalik va parvarish</a>
+        <a class="ml-6 text-slate-400" href="">Salomatlik</a>
+        <a class="ml-6 text-slate-400" href="">Uy-ro`zg`or buyumlari</a>
+        <a class="ml-6 text-slate-400" href="">Yana ></a>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <swiper-container class="mySwiper" pagination="true" navigation="true" space-between="30" centered-slides="true"
+      autoplay-delay="2500" autoplay-disable-on-interaction="false">
+      <swiper-slide>
+        <img src="https://images.uzum.uz/cmrkr2125ku8ad8j53g0/main_page_banner.jpg" alt="">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://images.uzum.uz/cn2a28jifoubkc6r3ohg/main_page_banner.jpg" alt="">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://images.uzum.uz/cmrksebifoubkc6ppdcg/main_page_banner.jpg" alt="">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://images.uzum.uz/cmroc23ifoubkc6pqkng/main_page_banner.jpg" alt="">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://images.uzum.uz/cmt4oihs99ouqbfsmscg/main_page_banner.jpg" alt="">
+      </swiper-slide>
+      <div class="autoplay-progress" slot="container-end">
+        <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span></span>
+      </div>
+    </swiper-container>
+    <div class="container mx-auto py-12">
+      <h1 class="text-3xl font-semibold mb-8">Tavsiyalar </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2"></div>
+    </div>
+  </main>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+
+    const swiperEl = document.querySelector("swiper-container");
+    swiperEl.addEventListener("autoplaytimeleft", (e) => {
+      const [swiper, time, progress] = e.detail;
+      progressCircle.style.setProperty("--progress", 1 - progress);
+      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    });
+  </script>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
