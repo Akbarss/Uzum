@@ -95,6 +95,10 @@
       stroke-dasharray: 125.6;
       transform: rotate(-90deg);
     }
+
+    .card {
+      width: 300px;
+    }
   </style>
 </head>
 
@@ -210,9 +214,10 @@
         <span></span>
       </div>
     </swiper-container>
-    <div class="container mx-auto py-12">
+    <div class="container mx-auto py-11">
       <h1 class="text-3xl font-semibold mb-8">Tavsiyalar </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+      </div>
     </div>
   </main>
   <!-- Swiper JS -->
@@ -231,6 +236,8 @@
     });
   </script>
   <script type="module" src="/main.js"></script>
+  <script src="./js/script.js" type="module"></script>
+  <script src="./js/data.js" type="module"></script>
 </body>
 
 </html>
